@@ -54,30 +54,31 @@ public class KeystrokeClass extends JFrame implements KeyListener, Runnable {
 	//
 	// }
 	// button
+	/*
 	public void buttonAction() {
 
 		c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				String cmd = evt.getActionCommand();
-				note.playSound("C:\\Users\\s-laist\\Music\\c.wav");
+				note.playSound("C:\\Users\\s-jeeb\\Music\\c.wav");
 
 			}
 		});
 		d.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				String cmd = evt.getActionCommand();
-				note.playSound("C:\\Users\\s-laist\\Music\\d.wav");
+				note.playSound("C:\\Users\\s-jeeb\\Music\\d.wav");
 
 			}
 		});
 		e.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				String cmd = evt.getActionCommand();
-				note.playSound("C:\\Users\\s-laist\\Music\\e.wav");
+				note.playSound("C:\\Users\\s-jeeb\\Music\\e.wav");
 			}
 		});
 	}
-
+*/
 	public void keyTyped(KeyEvent e) {
 		// unused method
 	}
@@ -85,76 +86,94 @@ public class KeystrokeClass extends JFrame implements KeyListener, Runnable {
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
 		// if the key is a, play "c" note
-		Thread thread = new Thread(new Runnable() {
-			public void run() {
+		//Thread thread = new Thread(new Runnable() {
+			//public void run() {
+		int x;
 				if (keyCode == KeyEvent.VK_A) {
-					note.playSound("C:\\Users\\s-laist\\Music\\c.wav");
+					x =1;
+					firstSound sound = new firstSound(x);
+					sound.start();
 
 				} else if (keyCode == KeyEvent.VK_S) {
-
-					note.playSound("C:\\Users\\s-laist\\Music\\d.wav");
+					x =2;
+					firstSound sound = new firstSound(x);
+					sound.start();
+					
 				} else if (keyCode == KeyEvent.VK_D) {
-
-					note.playSound("C:\\Users\\s-laist\\Music\\e.wav");
+					x=3;
+					firstSound sound = new firstSound(x);
+					sound.start();
+					
 				} else if (keyCode == KeyEvent.VK_F) {
-					note.playSound("C:\\Users\\s-laist\\Music\\f.wav");
+					x =4;
+					firstSound sound = new firstSound(x);
+					sound.start();
 				} else if (keyCode == KeyEvent.VK_G) {
-
-					note.playSound("C:\\Users\\s-laist\\Music\\g.wav");
+					x = 5;
+					firstSound sound = new firstSound(x);
+					sound.start();
 				} else if (keyCode == KeyEvent.VK_H) {
-
-					note.playSound("C:\\Users\\s-laist\\Music\\a.wav");
+					x = 6;
+					firstSound sound = new firstSound(x);
+					sound.start();
 				} else if (keyCode == KeyEvent.VK_J) {
-
-					note.playSound("C:\\Users\\s-laist\\Music\\b.wav");
+					x = 7;
+					firstSound sound = new firstSound(x);
+					sound.start();
 				} else if (keyCode == KeyEvent.VK_K) {
-
-					note.playSound("C:\\Users\\s-laist\\Music\\c5.wav");
+					x = 8;
+					firstSound sound = new firstSound(x);
+					sound.start();
 				} else if (keyCode == KeyEvent.VK_W) {
-
-					note.playSound("C:\\Users\\s-laist\\Music\\dFlat.wav");
+					x = 9;
+					firstSound sound = new firstSound(x);
+					sound.start();
 				} else if (keyCode == KeyEvent.VK_E) {
-
-					note.playSound("C:\\Users\\s-laist\\Music\\eFlat.wav");
+					x = 10;
+					firstSound sound = new firstSound(x);
+					sound.start();
 				} else if (keyCode == KeyEvent.VK_T) {
-
-					note.playSound("C:\\Users\\s-laist\\Music\\gFlat.wav");
+					x = 11;
+					firstSound sound = new firstSound(x);
+					sound.start();
 				} else if (keyCode == KeyEvent.VK_Y) {
-
-					note.playSound("C:\\Users\\s-laist\\Music\\aFlat.wav");
+					x = 12;
+					firstSound sound = new firstSound(x);
+					sound.start();
 				} else if (keyCode == KeyEvent.VK_U) {
-
-					note.playSound("C:\\Users\\s-laist\\Music\\bFlat.wav");
+					x = 13;
+					firstSound sound = new firstSound(x);
+					sound.start();
 				}
 				// if user hold down shift and 'A'
 
 			}
-		});
+	//	});
 
-		thread.start();
+	//	thread.start();
 //		Thread.currentThread().setDaemon(true);
 
-	}
+	//}
 
 	public void keyReleased(KeyEvent e) {
 
 	}
 
 	public static void soundFiles() {
-		// cNote.playSound("C:\\Users\\s-laist\\Music\\c.wav");
-		// dNote.playSound("C:\\Users\\s-laist\\Music\\d.wav");
-		// eNote.playSound("C:\\Users\\s-laist\\Music\\e.wav");
-		// fNote.playSound("C:\\Users\\s-laist\\Music\\f.wav");
-		// gNote.playSound("C:\\Users\\s-laist\\Music\\g.wav");
-		// aNote.playSound("C:\\Users\\s-laist\\Music\\a.wav");
-		// bNote.playSound("C:\\Users\\s-laist\\Music\\b.wav");
+		// cNote.playSound("C:\\Users\\s-jeeb\\Music\\c.wav");
+		// dNote.playSound("C:\\Users\\s-jeeb\\Music\\d.wav");
+		// eNote.playSound("C:\\Users\\s-jeeb\\Music\\e.wav");
+		// fNote.playSound("C:\\Users\\s-jeeb\\Music\\f.wav");
+		// gNote.playSound("C:\\Users\\s-jeeb\\Music\\g.wav");
+		// aNote.playSound("C:\\Users\\s-jeeb\\Music\\a.wav");
+		// bNote.playSound("C:\\Users\\s-jeeb\\Music\\b.wav");
 
 	}
 
 	public void setup() throws IOException {
 		BorderLayout layout = new BorderLayout();
 		JFrame frame = new JFrame();
-		File file = new File("C:\\Users\\s-laist\\Pictures\\Camera Roll\\piano-octave.jpg");
+		File file = new File("C:\\Users\\s-jeeb\\Pictures\\Camera Roll\\piano-octave.jpg");
 
 		BufferedImage image = ImageIO.read(file);
 		JLabel label = new JLabel(new ImageIcon(image));
